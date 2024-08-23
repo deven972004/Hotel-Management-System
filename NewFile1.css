@@ -1,0 +1,203 @@
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #192231, #494E6B); /* Dark gradient background with Evening and Stormy colors */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.15); /* Light color with high transparency */
+    padding: 20px 0;
+    color: #192231; /* Evening color for text */
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(10px); /* Blur effect for glassy look */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
+    font-size: 3em;
+    color: #FFBF00; /* Amber color for h1 */
+    letter-spacing: 2px; /* Spacing for grandeur */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4); /* Enhanced shadow for better depth */
+    margin: 0;
+    padding: 10px 0;
+    transition: transform 0.3s ease-in-out; /* Hover effect */
+}
+
+
+nav ul.nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul.nav-list li {
+    margin: 0;
+}
+
+nav ul.nav-list li a {
+    text-decoration: none;
+    color: #FFFFFF; /* White text for nav links */
+    font-size: 1.2em;
+    padding: 8px 15px;
+    border-radius: 5px; /* Rounded corners for links */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Transition effects */
+}
+
+nav ul.nav-list li a:hover {
+    background-color: #985E6D; /* Sunset color on hover */
+    color: #fff; /* White text on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+main {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Form Section */
+.form-section {
+    background: rgba(255, 255, 255, 0.2); /* White with low opacity for glass effect */
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    backdrop-filter: blur(10px); /* Blur effect for frosted glass look */
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Subtle border for glass edge */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s; /* Transition effects */
+    width: 80%;
+    max-width: 600px;
+}
+
+.form-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+h2 {
+    color: #4A2F39; /* Sunset color for sub-headings */
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.form-group label {
+    font-size: 1.1em;
+    color: #ffffff; /* White for labels */
+    flex-basis: 30%; /* Label width */
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #985E6D; /* Sunset color border for inputs */
+    border-radius: 5px;
+    width: 65%;
+    transition: border-color 0.3s; /* Transition for border color */
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus {
+    border-color: #494E6B; /* Stormy color on focus */
+}
+
+button {
+    padding: 12px 25px;
+    background-color: rgba(148, 87, 109, 0.7); /* Sunset color with transparency */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transition effects */
+}
+
+button:hover {
+    background-color: rgba(148, 87, 109, 1); /* Full Sunset color on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+/* Table Styles for Bookings Display */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Table shadow */
+    backdrop-filter: blur(5px); /* Subtle blur effect */
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    color: #ffffff; /* White text for table content */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for rows */
+}
+
+th {
+    background-color: rgba(25, 34, 49, 0.8); /* Evening color with transparency */
+    font-weight: bold;
+}
+
+td {
+    background-color: rgba(73, 78, 107, 0.5); /* Stormy color with transparency */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .form-section {
+        width: 90%; /* Full width on smaller screens */
+    }
+
+    .form-group {
+        flex-direction: column; /* Stack form elements vertically */
+        align-items: flex-start; /* Align labels to the left */
+    }
+
+    .form-group label {
+        margin-bottom: 5px; /* Space between label and input */
+        flex-basis: auto; /* Reset flex-basis */
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="number"] {
+        width: 100%; /* Full width for inputs */
+    }
+}
