@@ -3,104 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospitality Hub: Hotel Management Software</title>
+    <title>The Velvet Rose Inn - Hotel Booking</title>
     <link rel="stylesheet" href="NewFile1.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>The Velvet Rose Inn</h1>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="#book">Book a Room</a></li>
-                    <li><a href="#view">View a Room</a></li>
-                    <li><a href="#show">Show All Bookings</a></li>
-                    <li><a href="#update">Update Booking</a></li>
-                    <li><a href="#delete">Delete Booking</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <main>
-        <div class="container">
-            <section id="book" class="form-section">
-                <h2>Book a Room</h2>
-                <form action="bookroom1" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="roomNo">Room No:</label>
-                        <input type="number" id="roomNo" name="roomNo" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone:</label>
-                        <input type="text" id="phone" name="phone" required>
-                    </div>
-                    <button type="submit">Book Room</button>
-                </form>
-            </section>
+<header>
+    <div class="container">
+        <h1>The Velvet Rose Inn</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#book">Book a Room</a></li>
+                <li><a href="#view">View a Room</a></li>
+                <li><a href="#show">Show All Bookings</a></li>
+                <li><a href="#update">Update Booking</a></li>
+                <li><a href="#delete">Delete Booking</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-            <hr>
+<main>
+    <div class="container">
 
-            <section id="view" class="form-section">
-                <h2>View a Room</h2>
-                <form action="viewroom" method="GET">
-                    <div class="form-group">
-                        <label for="viewId">ID:</label>
-                        <input type="number" id="viewId" name="id" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="viewName">Name:</label>
-                        <input type="text" id="viewName" name="name" required>
-                    </div>
-                    <button type="submit">View Room</button>
-                </form>
-            </section>
+        <!-- Book Room -->
+        <section id="book" class="form-section">
+            <h2>Book a Room</h2>
+            <form action="/bookroom" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="roomNo">Room Number:</label>
+                    <input type="number" id="roomNo" name="room_no" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="9876543210" required>
+                </div>
+                <button type="submit">Book Room</button>
+            </form>
+        </section>
 
-            <hr>
+        <hr>
 
-            <section id="show" class="form-section">
-                <h2>Show All Bookings</h2>
-                <form action="showbookings" method="GET">
-                    <button type="submit">Show All Bookings</button>
-                </form>
-            </section>
+        <!-- View Room -->
+        <section id="view" class="form-section">
+            <h2>View a Room</h2>
+            <form action="/viewroom" method="GET">
+                <div class="form-group">
+                    <label for="viewId">Booking ID:</label>
+                    <input type="number" id="viewId" name="id" required>
+                </div>
+                <div class="form-group">
+                    <label for="viewName">Name:</label>
+                    <input type="text" id="viewName" name="name" required>
+                </div>
+                <button type="submit">View Booking</button>
+            </form>
+        </section>
 
-            <hr>
+        <hr>
 
-            <section id="update" class="form-section">
-                <h2>Update Booking</h2>
-                <form id="updatebook" action="updatebooking" method="POST">
-                    <div class="form-group">
-                        <label for="updateId">ID:</label>
-                        <input type="number" id="updateId" name="id" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="newPhone">New Phone:</label>
-                        <input type="text" id="newPhone" name="phone" required>
-                    </div>
-                    <button type="submit">Update Booking</button>
-                </form>
-            </section>
+        <!-- Show All Bookings -->
+        <section id="show" class="form-section">
+            <h2>Show All Bookings</h2>
+            <form action="/showallbooking" method="GET">
+                <button type="submit">Show All</button>
+            </form>
+        </section>
 
-            <hr>
+        <hr>
 
-            <section id="delete" class="form-section">
-                <h2>Delete Booking</h2>
-                <form action="deletebooking" method="POST">
-                    <div class="form-group">
-                        <label for="deleteId">ID:</label>
-                        <input type="number" id="deleteId" name="id" required>
-                    </div>
-                    <button type="submit">Delete Booking</button>
-                </form>
-            </section>
-        </div>
-    </main>
+        <!-- Update Booking -->
+        <section id="update" class="form-section">
+            <h2>Update Booking</h2>
+            <form action="/updatebooking" method="POST">
+                <div class="form-group">
+                    <label for="updateId">Booking ID:</label>
+                    <input type="number" id="updateId" name="id" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPhone">New Phone Number:</label>
+                    <input type="tel" id="newPhone" name="phone" placeholder="9876543210" required>
+                </div>
+                <button type="submit">Update</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <!-- Delete Booking -->
+        <section id="delete" class="form-section">
+            <h2>Delete Booking</h2>
+            <form action="/deletebooking" method="POST">
+                <div class="form-group">
+                    <label for="deleteId">Booking ID:</label>
+                    <input type="number" id="deleteId" name="id" required>
+                </div>
+                <button type="submit" class="delete-btn">Delete</button>
+            </form>
+        </section>
+
+    </div>
+</main>
+
 </body>
 </html>
